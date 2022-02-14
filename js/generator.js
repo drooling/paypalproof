@@ -12,7 +12,7 @@ generate_proof = () => {
     } else if (currency == "USD") {
         amountstr = `$${amount} USD`
     } else if (currency == "CAD") {
-        amountstr = `£${amount} CAD`
+        amountstr = `${amount} CAD`
     }
 
     document.write(proof_template.replace("{{AMOUNT}}", amountstr).replace("{{RECEIVER}}", receiver))
