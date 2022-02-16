@@ -7,12 +7,18 @@ generate_proof = () => {
 
     let amountstr = '';
 
-    if (currency == "EUR") {
-        amountstr = `${amount} EUR`
-    } else if (currency == "USD") {
-        amountstr = `$${amount} USD`
-    } else if (currency == "CAD") {
-        amountstr = `${amount} CAD`
+    switch (currency) {
+        case "EUR":
+            amountstr = `€${amount} EUR`;
+            break;
+        case "USD":
+            amountstr = `$${amount} USD`;
+            break;
+        case "CAD":
+            amountstr = `${amount} CAD`;
+            break;
+        default:
+            amountstr = `$${amount} USD`
     }
 
     document.write(proof_template.replace("{{AMOUNT}}", amountstr).replace("{{RECEIVER}}", receiver))
